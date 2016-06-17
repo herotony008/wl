@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin:0;padding:0;}
+	img{vertical-align: top;border:none;}
+	ul{list-style: none;}
+	.poster-main{position:relative;margin:20px auto;width:600px;height: 270px; background:#FF0}
+	.poster-main .poster-list{width:600px;height:270px;}
+	.poster-main .poster-list .poster-item{width:600px;height:270px;}
+	.poster-main .poster-list .poster-item img{width:100%;height:100%;}
+	.poster-main .poster-btn{ position: absolute;top:0;width:100px;height:270px;z-index:10;font-size: 30px; font-weight:bold;color:#FFF; line-height:270px; text-align:center;overflow: hidden;cursor: pointer; /*opacity: 0.5;*/background:#F00}
+	.poster-main .poster-prev-btn{left:-100px;}
+	.poster-main .poster-next-btn{right:-100px;}
+
+	.poster-main .tab{position:absolute;bottom:10px;left:0;}
+	.poster-main .tab i{float:left;display:inline; margin-right:10px;width:10px;height:10px;background-color:#ccc;overflow:hidden;cursor:pointer}
+	.poster-main .tab i.selected{background-color:#f00;}
+	.poster-main .tab i.selected2{background-color:#0F0;}
+	.poster-main .tab{position:absolute;bottom:10px;left:0;}
+	
+	.poster-main .tab3 em{float:left;display:inline; margin-right:10px;width:15px;height:15px; line-height:15px; text-align:center;background-color:#FFF;color:#333;font-size:12px;overflow:hidden;cursor:pointer}
+	.poster-main .tab3 em.selected3{background-color:#00F;color:#FFF}
+	.poster-main .tab3{position:absolute;bottom:10px;right:-10px;}/*小标位置必须给出*/
+
+	.poster-main .poster-list2{width:600px;height:270px;}
+	.poster-main .poster-list2 .poster-item{width:200px;height:270px;}
+	.poster-main .poster-list2 .poster-item img{width:100%;height:100%;}
+	
+	
+	.poster-main .poster-list3{width:600px;height:90px;}
+	.poster-main .poster-list3 .poster-item{width:600px;height:90px;}
+	.poster-main .poster-list3 .poster-item img{width:100%;height:100%;}
+	
+	.pr{ position:relative;}
+	.pa_p{ position:absolute;width:100%;bottom:0; height:50px;padding:0 30px; background-color:#000; line-height:50px;color:#FFF; font-size:16px;}
+	</style>
+	<script src="http://libs.baidu.com/jquery/1.8.3/jquery.js"></script>
+    <script src="jq/focus.js"></script>
+
+
+</head>
+<body>
+<!--通过css控制结构-->
+<div class="J_Focus poster-main" data-setting='{
+												"speed":500,
+												"autoPlay":true,
+												"delay":3000,
+                                                "PlayNum":1,
+												"effect":"fade",
+                                                "focus_tab":["tab",false,true],
+                                                "selectClass":"selected"
+												}'>
+	 <div class="poster-btn poster-prev-btn"><</div>
+	 <ul class="poster-list">
+	 	<li class="poster-item" title="撒撒大师打大声答道安大师"><a href="#"><img src="images/1.jpg"></a></li>
+	 	<li class="poster-item" title="撒撒安大师打大声答道安大师"><a href="#"><img src="images/2.jpg"></a></li>
+	 	<li class="poster-item" title="撒撒道安大师打大声答道安大师"><a href="#"><img src="images/3.jpg"></a></li>
+	 	<li class="poster-item" title="撒撒答道安大师打大声答道安大师"><a href="#"><img src="images/4.jpg"></a></li>
+	 	<li class="poster-item" title="撒大声答道安大师打大声答道安大师"><a href="#"><img src="images/5.jpg"></a></li>
+	 	<li class="poster-item" title="撒撒大声答道安大师打大声答道安大师"><a href="#"><img src="images/6.jpg"></a></li>
+	 </ul>
+	 <div class="poster-btn poster-next-btn">></div>
+</div>
+
+<div class="J_Focus poster-main">
+	 <div class="poster-btn poster-prev-btn"><</div>
+     <ul class="poster-list">
+        <li class="poster-item"><a href="#"><img src="images/1.jpg"></a></li>
+        <li class="poster-item"><a href="#"><img src="images/2.jpg"></a></li>
+        <li class="poster-item"><a href="#"><img src="images/3.jpg"></a></li>
+        <li class="poster-item"><a href="#"><img src="images/4.jpg"></a></li>
+        <li class="poster-item"><a href="#"><img src="images/5.jpg"></a></li>
+        <li class="poster-item"><a href="#"><img src="images/6.jpg"></a></li>
+     </ul> 
+	 <div class="poster-btn poster-next-btn">></div>
+</div>
+
+
+<div class="J_Focus poster-main" data-setting='{
+												"speed":500,
+												"autoPlay":true,
+												"delay":3000,
+                                                "PlayNum":1,
+												"effect":"horizontal",
+                                                "focus_tab":["tab",false,true],
+                                                "selectClass":"selected2"
+												}'>
+	 <div class="poster-btn poster-prev-btn"><</div>
+     <ul class="poster-list">
+        <li class="poster-item pr"><a href="#"><img src="images/1.jpg"></a><p class="pa_p">文本文本文本</p></li>
+        <li class="poster-item pr"><a href="#"><img src="images/2.jpg"></a><p class="pa_p">文本文本文本文本</p></li>
+        <li class="poster-item pr"><a href="#"><img src="images/3.jpg"></a><p class="pa_p">文本文本文本文本文本</p></li>
+        <li class="poster-item pr"><a href="#"><img src="images/4.jpg"></a><p class="pa_p">文本文本文本文本文本文本</p></li>
+        <li class="poster-item pr"><a href="#"><img src="images/5.jpg"></a><p class="pa_p">文本文本文本文本文本文本文本</p></li>
+        <li class="poster-item pr"><a href="#"><img src="images/6.jpg"></a><p class="pa_p">文本文本文本文本文本文本文本文本</p></li>
+     </ul>
+	 <div class="poster-btn poster-next-btn">></div>
+</div>
+
+<div class="J_Focus poster-main" data-setting='{
+												"speed":500,
+												"autoPlay":false,
+												"delay":3000,
+                                                "PlayNum":1,
+												"effect":"vertical",
+                                                "focus_tab":["tab3",true,true],
+                                                "selectClass":"selected3"
+												}'>
+	 <div class="poster-btn poster-prev-btn"><</div>
+	 <ul class="poster-list">
+	 	<li class="poster-item"><a href="#"><img src="images/1.jpg"></a></li>
+	 	<li class="poster-item"><a href="#"><img src="images/2.jpg"></a></li>
+	 	<li class="poster-item"><a href="#"><img src="images/3.jpg"></a></li>
+	 	<li class="poster-item"><a href="#"><img src="images/4.jpg"></a></li>
+	 	<li class="poster-item"><a href="#"><img src="images/5.jpg"></a></li>
+	 	<li class="poster-item"><a href="#"><img src="images/6.jpg"></a></li>
+	 </ul>
+     <!--小标-->
+     <div class="tab3"><em class="selected3">1</em><em>2</em><em>3</em><em>4</em><em>5</em><em>6</em></div>
+	 <div class="poster-btn poster-next-btn">></div>
+</div>
+
+<div class="J_Focus poster-main" data-setting='{
+												"speed":500,
+												"autoPlay":false,
+												"delay":3000,
+                                                "PlayNum":2,
+												"effect":"horizontal"
+												}'>
+	 <div class="poster-btn poster-prev-btn"><</div>
+	 <ul class="poster-list2">
+	 	<li class="poster-item"><a href="#"><img src="images/1.jpg"></a></li>
+	 	<li class="poster-item"><a href="#"><img src="images/2.jpg"></a></li>
+	 	<li class="poster-item"><a href="#"><img src="images/3.jpg"></a></li>
+	 	<li class="poster-item"><a href="#"><img src="images/4.jpg"></a></li>
+	 	<li class="poster-item"><a href="#"><img src="images/5.jpg"></a></li>
+	 	<li class="poster-item"><a href="#"><img src="images/6.jpg"></a></li>
+	 </ul>
+	 <div class="poster-btn poster-next-btn">></div>
+</div>
+
+
+<div class="J_Focus poster-main" data-setting='{
+												"speed":500,
+												"autoPlay":false,
+												"delay":3000,
+                                                "PlayNum":2,
+												"effect":"vertical"
+												}'>
+	 <div class="poster-btn poster-prev-btn"><</div>
+	 <ul class="poster-list3">
+	 	<li class="poster-item"><a href="#"><img src="images/1.jpg"></a></li>
+	 	<li class="poster-item"><a href="#"><img src="images/2.jpg"></a></li>
+	 	<li class="poster-item"><a href="#"><img src="images/3.jpg"></a></li>
+	 	<li class="poster-item"><a href="#"><img src="images/4.jpg"></a></li>
+	 	<li class="poster-item"><a href="#"><img src="images/5.jpg"></a></li>
+	 	<li class="poster-item"><a href="#"><img src="images/6.jpg"></a></li>
+	 </ul>
+	 <div class="poster-btn poster-next-btn">></div>
+</div>
+
+<div class="J_Focus poster-main" data-setting='{
+												"speed":500,
+												"autoPlay":false,
+												"delay":3000,
+                                                "PlayNum":3,
+												"effect":"fade"
+												}'>
+	 <div class="poster-btn poster-prev-btn"><</div>
+	 <ul class="poster-list2">
+	 	<li class="poster-item"><a href="#"><img src="images/1.jpg"></a></li>
+	 	<li class="poster-item"><a href="#"><img src="images/2.jpg"></a></li>
+	 	<li class="poster-item"><a href="#"><img src="images/3.jpg"></a></li>
+	 	<li class="poster-item"><a href="#"><img src="images/4.jpg"></a></li>
+	 	<li class="poster-item"><a href="#"><img src="images/5.jpg"></a></li>
+	 	<li class="poster-item"><a href="#"><img src="images/6.jpg"></a></li>
+	 </ul>
+	 <div class="poster-btn poster-next-btn">></div>
+</div>
+<script type="text/javascript">
+
+	$(function(){
+		Focus.init($(".J_Focus"))	
+	});
+
+</script>
+
+
+</body>
+</html>

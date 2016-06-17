@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3 Hover</title>
+	<style type="text/css">
+		.circlediv{ position:relative;margin:50px; float:left;width:200px;height:200px;background:#f60;border-radius:50%;}
+		
+		.mask{ position:absolute;top:10%;left:10%;width:80%;height:80%;line-height:160px; text-align:center;background:#FFF;border-radius:50%;}
+		
+		.circlediv1{width:100px;height:100px;}
+		.circlediv1 .mask{ line-height:80px;}
+		.circlediv1 .leftbox,.circlediv1 .left{clip:rect(auto,50px,auto,auto)}
+		.circlediv1 .rightbox,.circlediv1 .right{clip:rect(auto,auto,auto,50px)}
+		
+		.leftbox,.rightbox,.left,.right{ position:absolute;width:100%;height:100%;border-radius:50%;}
+		.leftbox,.left{clip:rect(auto,100px,auto,auto)}
+		.rightbox,.right{clip:rect(auto,auto,auto,100px)}
+		.left{background:#900;transform:rotate(0deg);-webkit-transform:rotate(0deg);}
+		.right{background:#900;transform:rotate(0deg);-webkit-transform:rotate(0deg);}
+	</style>
+
+</head>
+<body>
+	
+    
+    <div class="circlediv">
+    	<div class="leftbox">
+        	<div class="left"></div>
+        </div>
+        <div class="rightbox">
+        	<div class="right"></div>
+        </div>
+    	<div class="mask"><em class="maskem">99</em>M</div>
+    </div>
+    <div class="circlediv">
+    	<div class="leftbox">
+        	<div class="left"></div>
+        </div>
+        <div class="rightbox">
+        	<div class="right"></div>
+        </div>
+    	<div class="mask"><em class="maskem">40</em>M</div>
+    </div>
+    <div class="circlediv">
+    	<div class="leftbox">
+        	<div class="left"></div>
+        </div>
+        <div class="rightbox">
+        	<div class="right"></div>
+        </div>
+    	<div class="mask"><em class="maskem">60</em>M</div>
+    </div>
+    <div class="circlediv circlediv1">
+    	<div class="leftbox">
+        	<div class="left"></div>
+        </div>
+        <div class="rightbox">
+        	<div class="right"></div>
+        </div>
+    	<div class="mask"><em class="maskem">87</em>M</div>
+    </div>
+    <script src="http://libs.baidu.com/jquery/1.8.3/jquery.js"></script>
+    <script>
+    $(function() {
+		
+		$(".circlediv").each(function() {
+			var self = $(this)
+            var maxTT = 100;
+			var tt = parseInt(self.find(".maskem").text());
+			
+			var aa = parseInt(tt/maxTT*100)
+			var aa2 = 0;
+			var timer = null;
+			
+			self.find(".maskem").text(0)
+			
+			function add(){
+				
+				if(aa2<=50 && aa2<=aa){
+					self.find(".right").css("transform","rotate("+aa2*3.6+"deg)")
+				}else if(aa2<=100 && aa2>50 && aa2<=aa){
+					self.find(".right").css("transform","rotate(180deg)")
+					self.find(".left").css("transform","rotate("+(aa2-50)*3.6+"deg)")
+				}else{
+					clearInterval(timer);
+					return false;	
+				}
+				self.find(".maskem").text(aa2)
+				aa2++;
+			}
+			timer=setInterval(add,30)
+        });
+				
+
+	});
+    </script>
+</body>
+</html>

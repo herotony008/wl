@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="gb2312">
+<title>弹窗js</title>
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<style>
+*{margin:0;padding:0;}
+.pop{display:none;width:453px;height:299px;border:2px solid #F00; background-color:#FFF;}
+.pop2{display:none;width:253px;height:1199px;border:2px solid #F00; background-color:#FFF;}
+
+.ml20{ margin-left:20px;}
+</style>
+</head>
+<body style="">
+
+
+<p class="tc mt30" style="width:1000px;margin:0 auto;padding-top:400px;height:1700px;"><select name=""><option>22222</option><option>22222</option><option>22222</option><option>22222</option></select><a class="ml20" href="javascript:;" onClick="Popcall.showpop('pop')">弹第一次弹窗，不随着滚动</a><a class="ml20" href="javascript:;" onClick="Popcall.showpopG('pop2')">弹第2次弹窗(一开始高度就超过浏览器的高度)，随着滚动</a><a class="ml20" href="javascript:;" onClick="Popcall.showpopG('pop')">弹第3次弹窗（一开始高度没有超过浏览器的高度，后面超过），随着滚动</a></p>
+
+
+<div class="pop" id="pop"><a href="javascript:;" onClick="Popcall.showpop('pop2',1001,1002)">弹第二次弹窗</a>----<a href="javascript:;" onClick="Popcall.hidepop('pop');return false;">关闭</a></div>
+
+
+<div class="pop2" id="pop2"><a href="javascript:;" onClick="Popcall.hidepop('pop2');return false;">关闭带背景</a><a class="ml20" href="javascript:;" onClick="Popcall.hidepop('pop2',999);return false;">关闭</a></div>
+
+
+<script src="js/pop_v2.js?v=1435893861"></script>
+
+
+
+
+
+</body>
+</html>
